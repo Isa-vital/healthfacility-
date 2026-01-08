@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $post->title . ' - Safe Haven Wellness Center')
+@section('title', $post->title . ' - Global Mental Healthcare Association')
 
 @section('content')
 <!-- Compact Header -->

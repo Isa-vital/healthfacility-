@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Safe Haven Wellness Center - Your Trusted Guide to Mental Health')
+@section('title', 'Global Mental Healthcare Association - Your Trusted Guide to Mental Health')
 @section('description', 'Professional mental health services in a safe, supportive environment. Expert therapists, comprehensive treatment programs, and telehealth options available.')
 
 @section('content')
@@ -188,7 +188,7 @@
 <section class="py-5" style="background: var(--light-gray);">
     <div class="container">
         <div class="mb-4 text-center">
-            <h2 class="h4 fw-bold mb-3">How Safe Haven changes lives</h2>
+            <h2 class="h4 fw-bold mb-3">How Global Mental Healthcare Association changes lives</h2>
         </div>
         <div class="row g-4">
             @foreach($testimonials->take(3) as $testimonial)

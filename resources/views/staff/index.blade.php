@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Our Team - Safe Haven Wellness Center')
+@section('title', 'Our Team - Global Mental Healthcare Association')
 @section('description', 'Meet our team of experienced mental health professionals dedicated to supporting your wellness journey.')
 
 @section('content')

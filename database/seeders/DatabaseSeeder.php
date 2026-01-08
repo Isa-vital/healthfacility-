@@ -21,9 +21,11 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // Create admin user
-        $admin = User::factory()->create([
+        $admin = User::create([
             'name' => 'Admin User',
-            'email' => 'admin@safehavenwellness.com',
+            'email' => 'admin@globalmentalhealthcare.org',
+            'password' => bcrypt('admin123'),
+            'is_admin' => true,
         ]);
 
         // Create Services
@@ -199,7 +201,7 @@ class DatabaseSeeder extends Seeder
             [
                 'patient_name' => 'Anonymous',
                 'patient_initial' => 'S.M.',
-                'content' => 'Safe Haven has changed my life. After struggling with anxiety for years, I finally found a place where I felt understood and supported. My therapist is amazing and has given me tools I use every day.',
+                'content' => 'This place has changed my life. After struggling with anxiety for years, I finally found a place where I felt understood and supported. My therapist is amazing and has given me tools I use every day.',
                 'rating' => 5,
                 'treatment_type' => 'Individual Therapy',
                 'is_approved' => true,
@@ -217,7 +219,7 @@ class DatabaseSeeder extends Seeder
             [
                 'patient_name' => 'Anonymous',
                 'patient_initial' => 'L.R.',
-                'content' => 'Professional, compassionate, and effective. The staff at Safe Haven truly cares about their patients. I highly recommend their services to anyone seeking mental health support.',
+                'content' => 'Professional, compassionate, and effective. The staff truly cares about their patients. I highly recommend their services to anyone seeking mental health support.',
                 'rating' => 5,
                 'treatment_type' => 'Depression Treatment',
                 'is_approved' => true,

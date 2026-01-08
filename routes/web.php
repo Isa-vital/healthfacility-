@@ -29,3 +29,34 @@ Route::get('/appointments/success', [AppointmentController::class, 'success'])->
 // Blog
 Route::get('/resources', [BlogController::class, 'index'])->name('blog.index');
 Route::get('/resources/{slug}', [BlogController::class, 'show'])->name('blog.show');
+
+// Admin Routes
+Route::prefix('admin')->name('admin.')->group(function () {
+    // Guest routes (login)
+    Route::middleware('guest')->group(function () {
+        Route::get('/login', [App\Http\Controllers\Admin\AuthController::class, 'showLoginForm'])->name('login');
+        Route::post('/login', [App\Http\Controllers\Admin\AuthController::class, 'login']);
+    });
+
+    // Protected admin routes
+    Route::middleware(['auth', 'admin'])->group(function () {
+        Route::post('/logout', [App\Http\Controllers\Admin\AuthController::class, 'logout'])->name('logout');
+        Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
+        
+        // Services Management
+        Route::resource('services', App\Http\Controllers\Admin\ServiceController::class)->except(['show']);
+        
+        // Staff Management
+        Route::resource('staff', App\Http\Controllers\Admin\StaffController::class)->except(['show']);
+        
+        // Blog Posts Management
+        Route::resource('blog', App\Http\Controllers\Admin\BlogController::class)->except(['show']);
+        
+        // Appointments Management
+        Route::get('appointments', [App\Http\Controllers\Admin\AppointmentController::class, 'index'])->name('appointments.index');
+        Route::delete('appointments/{appointment}', [App\Http\Controllers\Admin\AppointmentController::class, 'destroy'])->name('appointments.destroy');
+        
+        // Testimonials Management
+        Route::resource('testimonials', App\Http\Controllers\Admin\TestimonialController::class)->except(['show']);
+    });
+});

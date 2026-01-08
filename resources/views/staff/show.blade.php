@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $member->name . ' - Safe Haven Wellness Center')
+@section('title', $member->name . ' - Global Mental Healthcare Association')
 
 @section('content')
 <!-- Hero Section -->
@@ -127,7 +127,7 @@
                                             <div class="d-flex align-items-start">
                                                 <i class="bi bi-geo-alt-fill text-primary me-3 fs-5"></i>
                                                 <div>
-                                                    <p class="mb-0">Safe Haven Wellness Center<br>
+                                                    <p class="mb-0">Global Mental Healthcare Association<br>
                                                         123 Wellness Ave, Suite 100</p>
                                                 </div>
                                             </div>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $service->title . ' - Safe Haven Wellness Center')
+@section('title', $service->title . ' - Global Mental Healthcare Association')
 @section('description', $service->description)
 
 @section('content')

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Book Appointment - Safe Haven Wellness Center')
+@section('title', 'Book Appointment - Global Mental Healthcare Association')
 
 @section('content')
 <!-- Hero Section -->

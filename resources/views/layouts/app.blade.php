@@ -4,8 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Safe Haven Wellness Center - Mental Health Care')</title>
+    <title>@yield('title', 'Global Mental Healthcare Association - Mental Health Care')</title>
     <meta name="description" content="@yield('description', 'Professional mental health services and compassionate care in a safe, welcoming environment.')">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/favicon_io/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/favicon_io/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicon_io/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('images/favicon_io/site.webmanifest') }}">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -524,8 +531,8 @@
     <nav class="navbar navbar-expand-lg sticky-top navbar-light">
         <div class="container">
             <a class="navbar-brand" href="{{ route('home') }}">
-                <i class="bi bi-heart-pulse-fill"></i>
-                Safe Haven Wellness
+                <img src="{{ asset('images/favicon_io/android-chrome-192x192.png') }}" alt="Global Mental Healthcare Association" style="height: 40px; width: 40px; object-fit: contain; margin-right: 8px;">
+                Global Mental Healthcare Association
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -568,8 +575,8 @@
             <div class="row g-4">
                 <div class="col-lg-4 mb-4">
                     <div class="d-flex align-items-center mb-3">
-                        <i class="bi bi-heart-pulse-fill me-2" style="font-size: 1.75rem; color: var(--primary-green);"></i>
-                        <h4 class="mb-0 fw-bold text-white">Safe Haven Wellness</h4>
+                        <img src="{{ asset('images/favicon_io/android-chrome-192x192.png') }}" alt="Global Mental Healthcare Association" style="height: 48px; width: 48px; object-fit: contain; margin-right: 12px;">
+                        <h4 class="mb-0 fw-bold text-white">Global Mental Healthcare Association</h4>
                     </div>
                     <p style="opacity: 0.85; line-height: 1.7; margin-bottom: 1.5rem;">Compassionate mental health care in a safe, welcoming environment. Your journey to wellness starts here.</p>
                     <div class="d-flex gap-2">
@@ -615,11 +622,14 @@
                         </li>
                         <li class="mb-2 d-flex align-items-center">
                             <i class="bi bi-telephone-fill me-2" style="color: var(--primary-green);"></i>
-                            <a href="tel:5551234567" style="color: rgba(255,255,255,0.75); text-decoration: none;">(555) 123-4567</a>
+                            <div style="color: rgba(255,255,255,0.75);">
+                                <a href="tel:0773251311" style="color: inherit; text-decoration: none;">0773 251 311</a> / 
+                                <a href="tel:0740725138" style="color: inherit; text-decoration: none;">0740 725 138</a>
+                            </div>
                         </li>
                         <li class="mb-2 d-flex align-items-center">
                             <i class="bi bi-envelope-fill me-2" style="color: var(--primary-green);"></i>
-                            <a href="mailto:hello@safehaven.com" style="color: rgba(255,255,255,0.75); text-decoration: none;">hello@safehaven.com</a>
+                            <a href="mailto:info@globalmentalhealthcare.org" style="color: rgba(255,255,255,0.75); text-decoration: none;">info@globalmentalhealthcare.org</a>
                         </li>
                         <li class="mb-2 d-flex align-items-start">
                             <i class="bi bi-clock-fill me-2 mt-1" style="color: var(--primary-green);"></i>
@@ -631,7 +641,7 @@
             <hr style="border-color: rgba(255,255,255,0.15); margin: 2.5rem 0 1.5rem;">
             <div class="row align-items-center">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    <p class="mb-0" style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">&copy; {{ date('Y') }} Safe Haven Wellness Center. All rights reserved.</p>
+                    <p class="mb-0" style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">&copy; {{ date('Y') }} Global Mental Healthcare Association. All rights reserved.</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <a href="#" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem; margin: 0 0.75rem;">Privacy Policy</a>

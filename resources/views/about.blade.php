@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
-@section('title', 'About Us - Safe Haven Wellness Center')
+@section('title', 'About Us - Global Mental Healthcare Association')
 
 @section('content')
 <!-- Hero Section -->
 <section class="hero-section" style="background: linear-gradient(rgba(44,95,141,0.85), rgba(63,170,122,0.85)), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1920&q=80') center/cover; min-height: 60vh; display: flex; align-items: center; color: white;">
     <div class="container text-center">
-        <h1 class="display-3 fw-bold mb-4 text-white">About Safe Haven Wellness Center</h1>
+        <h1 class="display-3 fw-bold mb-4 text-white">About Global Mental Healthcare Association</h1>
         <p class="lead fs-3 text-white">Where healing begins and hope is restored</p>
     </div>
 </section>
@@ -19,8 +19,8 @@
         <div class="row align-items-center g-5">
             <div class="col-lg-6 mb-4 mb-lg-0">
                 <h2 class="section-title mb-4">Our Mission</h2>
-                <p class="lead">To provide compassionate, evidence-based mental health care in a safe and welcoming environment where every individual feels heard, respected, and supported on their journey to wellness.</p>
-                <p class="fs-5 text-muted">At Safe Haven Wellness Center, we believe that mental health is fundamental to overall well-being. We are committed to breaking down barriers to mental health care and providing accessible, high-quality services to our community.</p>
+                <p class="lead">Ensuring Reliable And Sustainable Mentally Stable Global Populations.</p>
+                <p class="fs-5 text-muted">At Global Mental Healthcare Association, we believe that mental health is fundamental to overall well-being. We are committed to breaking down barriers to mental health care and providing accessible, high-quality services to our community.</p>
             </div>
             <div class="col-lg-6">
                 <div class="aspect-ratio aspect-4-3">
@@ -110,7 +110,8 @@
         <div class="row align-items-center g-5">
             <div class="col-lg-6 order-lg-2">
                 <h2 class="section-title mb-4">Our Story</h2>
-                <p class="fs-5">Safe Haven Wellness Center was founded with a simple yet powerful vision: to create a mental health facility where people feel truly safe to explore their feelings, confront their challenges, and work towards healing.</p>
+                <p class="fs-5"><strong>Our Vision:</strong> To completely Eradicate Global Mental Health Problems Through Outstanding Interventions for The Global Development.</p>
+                <p class="fs-5 mt-3">Global Mental Healthcare Association was founded with this powerful vision, creating a mental health facility where people feel truly safe to explore their feelings, confront their challenges, and work towards healing.</p>
 
                 <p class="text-muted">Recognizing the growing need for accessible, compassionate mental health services in our community, our founders assembled a team of dedicated professionals who share a commitment to evidence-based care and patient-centered treatment.</p>
 

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Appointment Confirmed - Safe Haven Wellness Center')
+@section('title', 'Appointment Confirmed - Global Mental Healthcare Association')
 
 @section('content')
 <!-- Hero Section -->
@@ -10,7 +10,7 @@
             <i class="bi bi-check-circle-fill" style="font-size: 6rem; color: white; text-shadow: 0 4px 6px rgba(0,0,0,0.2);"></i>
         </div>
         <h1 class="display-3 fw-bold mb-3 text-white">Appointment Request Received!</h1>
-        <p class="lead fs-4 text-white">Thank you for choosing Safe Haven Wellness Center.</p>
+        <p class="lead fs-4 text-white">Thank you for choosing Global Mental Healthcare Association.</p>
     </div>
 </section>
 
@@ -79,7 +79,7 @@
                         <div class="mt-4 p-4 bg-light rounded">
                             <p class="small text-muted mb-0 text-center">
                                 <i class="bi bi-question-circle"></i>
-                                Questions? Call us at <a href="tel:555-123-4567" class="fw-bold">(555) 123-4567</a>
+                                Questions? Call us at <a href="tel:0773251311" class="fw-bold">0773 251 311</a> or <a href="tel:0740725138" class="fw-bold">0740 725 138</a>
                             </p>
                         </div>
                     </div>

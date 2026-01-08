@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Contact Us - Safe Haven Wellness Center')
-@section('description', 'Get in touch with Safe Haven Wellness Center. We\'re here to answer your questions and help you start your wellness journey.')
+@section('title', 'Contact Us - Global Mental Healthcare Association')
+@section('description', 'Get in touch with Global Mental Healthcare Association. We\'re here to answer your questions and help you start your wellness journey.')
 
 @section('content')
 <!-- Hero Section -->
@@ -118,7 +118,7 @@
                             <div style="overflow: hidden;">
                                 <h6 class="mb-1 fw-bold" style="font-size: 0.9rem;">Our Location</h6>
                                 <p class="text-muted mb-0" style="font-size: 0.85rem; line-height: 1.4;">
-                                    Safe Haven Wellness Center<br>
+                                    Global Mental Healthcare Association<br>
                                     Wellness Avenue, Kampala, Uganda
                                 </p>
                             </div>
@@ -136,8 +136,8 @@
                             <div style="overflow: hidden;">
                                 <h6 class="mb-1 fw-bold" style="font-size: 0.9rem;">Phone</h6>
                                 <div style="font-size: 0.85rem;">
-                                    <p class="mb-1"><a href="tel:555-123-4567" class="text-decoration-none">(555) 123-4567</a></p>
-                                    <p class="mb-0"><strong>Crisis (24/7):</strong> <a href="tel:988" class="text-decoration-none fw-bold" style="color: var(--primary-green);">988</a></p>
+                                    <p class="mb-1"><a href="tel:0773251311" class="text-decoration-none">0773 251 311</a></p>
+                                    <p class="mb-0"><a href="tel:0740725138" class="text-decoration-none">0740 725 138</a></p>
                                 </div>
                             </div>
                         </div>
@@ -154,8 +154,8 @@
                             <div style="overflow: hidden;">
                                 <h6 class="mb-1 fw-bold" style="font-size: 0.9rem;">Email</h6>
                                 <div style="font-size: 0.85rem;">
-                                    <p class="mb-1"><a href="mailto:info@safehavenwellness.com" class="text-decoration-none" style="word-break: break-all;">info@safehavenwellness.com</a></p>
-                                    <p class="mb-0"><a href="mailto:appointments@safehavenwellness.com" class="text-decoration-none" style="word-break: break-all;">appointments@safehavenwellness.com</a></p>
+                                    <p class="mb-1"><a href="mailto:info@globalmentalhealthcare.org" class="text-decoration-none" style="word-break: break-all;">info@globalmentalhealthcare.org</a></p>
+                                    <p class="mb-0"><a href="mailto:appointments@globalmentalhealthcare.org" class="text-decoration-none" style="word-break: break-all;">appointments@globalmentalhealthcare.org</a></p>
                                 </div>
                             </div>
                         </div>
@@ -295,7 +295,7 @@
                     </span>
                     <h3 class="mb-3">Visit Our Center</h3>
                     <p class="text-muted mb-4" style="max-width: 400px;">
-                        Safe Haven Wellness Center<br>
+                        Global Mental Healthcare Association<br>
                         Wellness Avenue<br>
                         Kampala, Uganda
                     </p>
@@ -375,7 +375,7 @@
         <div class="card border-0 shadow-sm d-inline-block">
             <div class="card-body p-4">
                 <i class="bi bi-info-circle" style="color: var(--primary-blue); font-size: 1.5rem;"></i>
-                <p class="mb-0 mt-2">Don't see your insurance provider? <a href="mailto:info@safehavenwellness.com">Contact us</a> to verify your coverage.</p>
+                <p class="mb-0 mt-2">Don't see your insurance provider? <a href="mailto:info@globalmentalhealthcare.org">Contact us</a> to verify your coverage.</p>
             </div>
         </div>
     </div>
