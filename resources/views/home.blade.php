@@ -22,35 +22,62 @@
 <section class="container">
     <div class="row g-4">
         <div class="col-md-6 col-lg-3">
-            <div class="text-center">
-                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&h=300&fit=crop&q=80" alt="Guidance" class="img-fluid rounded mb-3" style="width: 100%; height: 200px; object-fit: cover;">
-                <h6 class="fw-bold mb-2">Guidance you can trust</h6>
-                <p class="text-muted small">Find trustworthy information about mental health that you can use to make better decisions.</p>
+            <div class="feature-card" style="position: relative; border-radius: 16px; overflow: hidden; height: 400px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: all 0.3s ease; cursor: pointer;">
+                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&h=500&fit=crop&q=80" alt="Guidance" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
+                <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 70%, transparent 100%); padding: 2rem 1.5rem 1.5rem;">
+                    <h5 class="fw-bold mb-2" style="color: white; font-size: 1.25rem;">The heart behind what we do</h5>
+                    <p class="mb-3" style="color: rgba(255,255,255,0.5); font-size: 0.9rem; line-height: 1.5;">Our story begins with a shared vision: to create trusted mental health information, and connections to everyone who needs it.</p>
+                    <a href="{{ route('about') }}" style="color: white; text-decoration: none; font-weight: 600; font-size: 0.9rem;">Learn More <i class="bi bi-arrow-right ms-1"></i></a>
+                </div>
             </div>
         </div>
         <div class="col-md-6 col-lg-3">
-            <div class="text-center">
-                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop&q=80" alt="Skills" class="img-fluid rounded mb-3" style="width: 100%; height: 200px; object-fit: cover;">
-                <h6 class="fw-bold mb-2">Skills for life success</h6>
-                <p class="text-muted small">Build skills to manage your emotions, strengthen relationships, and cope with challenges.</p>
+            <div class="feature-card" style="position: relative; border-radius: 16px; overflow: hidden; height: 400px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: all 0.3s ease; cursor: pointer;">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=500&fit=crop&q=80" alt="Skills" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
+                <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 70%, transparent 100%); padding: 2rem 1.5rem 1.5rem;">
+                    <h5 class="fw-bold mb-2" style="color: white; font-size: 1.25rem;">Skills for life success</h5>
+                    <p class="mb-3" style="color: rgba(255,255,255,0.9); font-size: 0.9rem; line-height: 1.5;">Build your biggest strengths with practical courses in core communication, emotion, and self-care skills.</p>
+                    <a href="{{ route('services.index') }}" style="color: white; text-decoration: none; font-weight: 600; font-size: 0.9rem;">Learn More <i class="bi bi-arrow-right ms-1"></i></a>
+                </div>
             </div>
         </div>
         <div class="col-md-6 col-lg-3">
-            <div class="text-center">
-                <img src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=400&h=300&fit=crop&q=80" alt="Strategies" class="img-fluid rounded mb-3" style="width: 100%; height: 200px; object-fit: cover;">
-                <h6 class="fw-bold mb-2">Strategies to feel better</h6>
-                <p class="text-muted small">Learn how to improve your mental health and well-being—and help your loved ones do the same.</p>
+            <div class="feature-card" style="position: relative; border-radius: 16px; overflow: hidden; height: 400px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: all 0.3s ease; cursor: pointer;">
+                <img src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=400&h=500&fit=crop&q=80" alt="Strategies" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
+                <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 70%, transparent 100%); padding: 2rem 1.5rem 1.5rem;">
+                    <h5 class="fw-bold mb-2" style="color: white; font-size: 1.25rem;">Strategies to feel better</h5>
+                    <p class="mb-3" style="color: rgba(255,255,255,0.9); font-size: 0.9rem; line-height: 1.5;">Learn how to strengthen mental health and well-being right now and help your loved ones do the same.</p>
+                    <a href="{{ route('blog.index') }}" style="color: white; text-decoration: none; font-weight: 600; font-size: 0.9rem;">Learn More <i class="bi bi-arrow-right ms-1"></i></a>
+                </div>
             </div>
         </div>
         <div class="col-md-6 col-lg-3">
-            <div class="text-center">
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=300&fit=crop&q=80" alt="Support" class="img-fluid rounded mb-3" style="width: 100%; height: 200px; object-fit: cover;">
-                <h6 class="fw-bold mb-2">Support you can rely on</h6>
-                <p class="text-muted small">We're here for you, day or night, whenever you need guidance, encouragement, or support.</p>
+            <div class="feature-card" style="position: relative; border-radius: 16px; overflow: hidden; height: 400px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: all 0.3s ease; cursor: pointer;">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=500&fit=crop&q=80" alt="Support" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
+                <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 70%, transparent 100%); padding: 2rem 1.5rem 1.5rem;">
+                    <h5 class="fw-bold mb-2" style="color: white; font-size: 1.25rem;">Support you feel really on</h5>
+                    <p class="mb-3" style="color: rgba(255,255,255,0.9); font-size: 0.9rem; line-height: 1.5;">Real story begins with its unique-coinsufficient and emotionally, helplessness array-generation but overgrant also supports.</p>
+                    <a href="{{ route('contact') }}" style="color: white; text-decoration: none; font-weight: 600; font-size: 0.9rem;">Learn More <i class="bi bi-arrow-right ms-1"></i></a>
+                </div>
             </div>
         </div>
     </div>
 </section>
+
+<style>
+    .feature-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2) !important;
+    }
+
+    .feature-card:hover img {
+        transform: scale(1.05);
+    }
+
+    .feature-card a:hover {
+        text-decoration: underline !important;
+    }
+</style>
 
 <div class="spacer-lg"></div>
 

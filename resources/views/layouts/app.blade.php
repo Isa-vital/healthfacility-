@@ -819,12 +819,11 @@
             <hr style="border-color: rgba(255,255,255,0.15); margin: 2.5rem 0 1.5rem;">
             <div class="row align-items-center">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    <p class="mb-0" style="color: rgba(255,255,255,0.6); font-size: 1.17rem;">&copy; {{ date('Y') }} Global Mental Healthcare Association. All rights reserved.</p>
+                    <p class="mb-0" style="color: rgba(255,255,255,0.6); font-size: 1.17rem;">&copy; {{ date('Y') }} Global Mental Healthcare Association. All rights reserved. <a style="color: blue; text-decoration: none;" href="www.techmarketug.com"><strong>Tech Market UG</strong></a></p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <a href="#" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 1.17rem; margin: 0 0.75rem;">Privacy Policy</a>
                     <a href="#" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 1.17rem; margin: 0 0.75rem;">Terms of Service</a>
-                    <a href="#" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 1.17rem; margin: 0 0.75rem;">Accessibility</a>
                 </div>
             </div>
         </div>
