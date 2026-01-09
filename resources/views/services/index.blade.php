@@ -36,17 +36,25 @@
     <div class="row g-4">
         @forelse($services as $service)
         <div class="col-md-6 col-lg-4" data-category="{{ $service->category }}">
-            <div class="card h-100">
+            <div class="card h-100 border-0 shadow-sm" style="overflow: hidden; transition: all 0.3s ease;">
                 @if($service->image)
-                <img src="{{ asset('storage/' . $service->image) }}" class="card-img-top aspect-4-3 img-cover" alt="{{ $service->title }}">
+                <div class="position-relative" style="overflow: hidden;">
+                    <img src="{{ str_starts_with($service->image, 'http') ? $service->image : asset('storage/' . $service->image) }}"
+                        class="card-img-top img-cover" style="height: 240px; transition: transform 0.3s ease;" alt="{{ $service->title }}">
+                    <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.1) 100%);"></div>
+                </div>
                 @else
-                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&h=450&fit=crop&q=80" class="card-img-top aspect-4-3 img-cover" alt="{{ $service->title }}">
+                <div class="position-relative" style="overflow: hidden;">
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&h=450&fit=crop&q=80"
+                        class="card-img-top img-cover" style="height: 240px; transition: transform 0.3s ease;" alt="{{ $service->title }}">
+                    <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.1) 100%);"></div>
+                </div>
                 @endif
                 <div class="card-body p-4 d-flex flex-column">
-                    <span class="badge-custom mb-3 align-self-start">{{ ucfirst($service->category) }}</span>
-                    <h5 class="card-title mb-3">{{ $service->title }}</h5>
-                    <p class="card-text text-muted mb-4 flex-grow-1" style="font-size: 0.95rem;">{{ $service->description }}</p>
-                    <a href="{{ route('services.show', $service->slug) }}" class="btn btn-primary btn-sm">Learn More</a>
+                    <span class="badge bg-primary bg-opacity-10 text-primary mb-3 align-self-start px-3 py-2" style="font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px;">{{ ucfirst($service->category) }}</span>
+                    <h5 class="card-title mb-3 fw-bold" style="font-size: 1.25rem;">{{ $service->title }}</h5>
+                    <p class="card-text text-muted mb-4 flex-grow-1" style="line-height: 1.6;">{{ $service->description }}</p>
+                    <a href="{{ route('services.show', $service->slug) }}" class="btn btn-primary w-100">Learn More <i class="bi bi-arrow-right ms-2"></i></a>
                 </div>
             </div>
         </div>
@@ -80,6 +88,23 @@
     document.addEventListener('DOMContentLoaded', function() {
         const filterButtons = document.querySelectorAll('[data-filter]');
         const serviceCards = document.querySelectorAll('[data-category]');
+
+        // Add hover effects to service cards
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+                this.style.boxShadow = '0 12px 24px rgba(0,0,0,0.15)';
+                const img = this.querySelector('img');
+                if (img) img.style.transform = 'scale(1.05)';
+            });
+
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 1px 3px rgba(0,0,0,0.08)';
+                const img = this.querySelector('img');
+                if (img) img.style.transform = 'scale(1)';
+            });
+        });
 
         filterButtons.forEach(button => {
             button.addEventListener('click', function() {

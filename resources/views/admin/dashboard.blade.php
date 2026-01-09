@@ -14,7 +14,7 @@
             <p class="text-muted mb-0">Services</p>
         </div>
     </div>
-    
+
     <div class="col-md-3">
         <div class="stat-card">
             <div class="stat-card-icon" style="background: var(--soft-green); color: var(--primary-green);">
@@ -24,7 +24,7 @@
             <p class="text-muted mb-0">Staff Members</p>
         </div>
     </div>
-    
+
     <div class="col-md-3">
         <div class="stat-card">
             <div class="stat-card-icon" style="background: #FFF3E0; color: #F57C00;">
@@ -34,7 +34,7 @@
             <p class="text-muted mb-0">Today's Appointments</p>
         </div>
     </div>
-    
+
     <div class="col-md-3">
         <div class="stat-card">
             <div class="stat-card-icon" style="background: #F3E5F5; color: #7B1FA2;">
@@ -50,42 +50,42 @@
     <div class="col-md-8">
         <div class="stat-card">
             <h5 class="fw-bold mb-4">Recent Appointments</h5>
-            
+
             @if($recent_appointments->count() > 0)
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Service</th>
-                                <th>Preferred Date</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($recent_appointments as $appointment)
-                            <tr>
-                                <td>{{ $appointment->name }}</td>
-                                <td>{{ $appointment->email }}</td>
-                                <td>{{ $appointment->service->title }}</td>
-                                <td>{{ \Carbon\Carbon::parse($appointment->preferred_date)->format('M d, Y') }}</td>
-                                <td>
-                                    <span class="badge bg-{{ $appointment->status == 'pending' ? 'warning' : ($appointment->status == 'confirmed' ? 'success' : 'info') }}">
-                                        {{ ucfirst($appointment->status) }}
-                                    </span>
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Service</th>
+                            <th>Preferred Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($recent_appointments as $appointment)
+                        <tr>
+                            <td>{{ $appointment->name }}</td>
+                            <td>{{ $appointment->email }}</td>
+                            <td>{{ $appointment->service->title }}</td>
+                            <td>{{ \Carbon\Carbon::parse($appointment->preferred_date)->format('M d, Y') }}</td>
+                            <td>
+                                <span class="badge bg-{{ $appointment->status == 'pending' ? 'warning' : ($appointment->status == 'confirmed' ? 'success' : 'info') }}">
+                                    {{ ucfirst($appointment->status) }}
+                                </span>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
             @else
-                <p class="text-muted">No appointments yet.</p>
+            <p class="text-muted">No appointments yet.</p>
             @endif
         </div>
     </div>
-    
+
     <div class="col-md-4">
         <div class="stat-card">
             <h5 class="fw-bold mb-4">Quick Stats</h5>

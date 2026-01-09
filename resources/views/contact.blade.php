@@ -229,7 +229,7 @@
                     </h2>
                     <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
-                            Most new patients can be seen within 1-2 weeks. We also offer same-day appointments for urgent situations. Crisis support is available 24/7 by calling 988.
+                            Most new patients can be seen within 1-2 weeks. We also offer same-day appointments for urgent situations. Crisis support is available 24/7 by calling 0773 251 311.
                         </div>
                     </div>
                 </div>

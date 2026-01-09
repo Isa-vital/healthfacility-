@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-blue: #0F7B8A;
@@ -32,6 +32,27 @@
             --text-dark: #1A202C;
             --text-muted: #718096;
             --border-color: #E2E8F0;
+
+            /* Typography tokens */
+            --font-primary: "DM Sans", sans-serif;
+            --font-weight-normal: 400;
+            --font-weight-semibold: 600;
+            --font-weight-black: 900;
+
+            /* Hero/H1 typography */
+            --hero-font-size-mobile: 47px;
+            --hero-font-size-tablet: 57px;
+            --hero-font-size-laptop: 75px;
+            --hero-font-size-desktop: 94px;
+            --hero-font-weight: 600;
+            --hero-line-height: 1.15;
+            --hero-letter-spacing: -2px;
+
+            /* Body typography */
+            --body-font-size: 21px;
+            --body-font-weight: 400;
+            --body-line-height: 1.6;
+            --body-color: #000000;
         }
 
         * {
@@ -41,24 +62,69 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            color: var(--text-dark);
-            line-height: 1.65;
-            font-weight: 400;
+            font-family: var(--font-primary);
+            font-size: var(--body-font-size);
+            font-weight: var(--body-font-weight);
+            line-height: var(--body-line-height);
+            color: var(--body-color);
             background: var(--white);
-            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-feature-settings: 'cv03', 'cv04', 'cv09', 'cv11', 'blwf';
         }
 
-        h1,
+        @media (max-width: 768px) {
+            body {
+                font-size: 18px;
+            }
+        }
+
+        p {
+            font-family: var(--font-primary);
+            font-size: var(--body-font-size);
+            font-weight: var(--body-font-weight);
+            line-height: var(--body-line-height);
+            color: var(--body-color);
+        }
+
+        h1 {
+            font-family: var(--font-primary);
+            font-weight: var(--hero-font-weight);
+            line-height: var(--hero-line-height);
+            letter-spacing: var(--hero-letter-spacing);
+            color: var(--body-color);
+            font-size: var(--hero-font-size-mobile);
+        }
+
         h2,
         h3,
         h4,
         h5,
         h6 {
-            font-weight: 600;
+            font-family: var(--font-primary);
+            font-weight: var(--font-weight-semibold);
             line-height: 1.25;
-            color: var(--text-dark);
-            letter-spacing: -0.01em;
+            color: var(--body-color);
+            letter-spacing: -0.5px;
+        }
+
+        /* Responsive Hero/H1 typography */
+        @media (min-width: 768px) {
+            h1 {
+                font-size: var(--hero-font-size-tablet);
+            }
+        }
+
+        @media (min-width: 1200px) {
+            h1 {
+                font-size: var(--hero-font-size-laptop);
+            }
+        }
+
+        @media (min-width: 1440px) {
+            h1 {
+                font-size: var(--hero-font-size-desktop);
+            }
         }
 
         /* Navigation */
@@ -69,8 +135,14 @@
             border-bottom: 1px solid var(--border-color);
         }
 
+        @media (max-width: 991px) {
+            .navbar {
+                padding: 0.75rem 0;
+            }
+        }
+
         .navbar-brand {
-            font-size: 1.25rem;
+            font-size: 1.625rem;
             font-weight: 700;
             color: var(--text-dark) !important;
             display: flex;
@@ -79,9 +151,45 @@
             letter-spacing: -0.01em;
         }
 
+        .navbar-brand .brand-full {
+            display: inline;
+        }
+
+        .navbar-brand .brand-short {
+            display: none;
+        }
+
+        @media (max-width: 1199px) {
+            .navbar-brand .brand-full {
+                display: none;
+            }
+
+            .navbar-brand .brand-short {
+                display: inline;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-brand {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .navbar-brand {
+                font-size: 1.1rem;
+            }
+        }
+
         .navbar-brand i {
-            font-size: 1.5rem;
+            font-size: 1.95rem;
             color: var(--primary-green);
+        }
+
+        @media (max-width: 768px) {
+            .navbar-brand i {
+                font-size: 1.5rem;
+            }
         }
 
         .nav-link {
@@ -90,12 +198,52 @@
             margin: 0 0.5rem;
             transition: color 0.2s ease;
             position: relative;
-            font-size: 0.9375rem;
+            font-size: 1.219rem;
             padding: 0.5rem 0.75rem !important;
+        }
+
+        @media (max-width: 991px) {
+            .nav-link {
+                font-size: 1.1rem;
+                padding: 0.5rem 0 !important;
+                margin: 0;
+            }
         }
 
         .nav-link:hover {
             color: var(--primary-blue) !important;
+        }
+
+        .navbar-toggler {
+            border: 2px solid var(--border-color);
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: 0 0 0 3px rgba(15, 123, 138, 0.15);
+            border-color: var(--primary-blue);
+        }
+
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                margin-top: 1rem;
+                padding: 1rem 0;
+                border-top: 1px solid var(--border-color);
+            }
+
+            .navbar-nav {
+                gap: 0.5rem;
+            }
+
+            .nav-item {
+                width: 100%;
+            }
+
+            .btn-appointment {
+                width: 100%;
+                margin-top: 0.5rem;
+            }
         }
 
         .btn-appointment {
@@ -106,7 +254,14 @@
             border-radius: 6px;
             font-weight: 600;
             transition: all 0.2s ease;
-            font-size: 0.9375rem;
+            font-size: 1.219rem;
+        }
+
+        @media (max-width: 991px) {
+            .btn-appointment {
+                font-size: 1.05rem;
+                padding: 0.5rem 1.25rem;
+            }
         }
 
         .btn-appointment:hover {
@@ -114,14 +269,21 @@
             color: var(--white);
         }
 
-        /* Emergency Banner */
+        /* Emergency Banner
         .emergency-banner {
             background: linear-gradient(90deg, #E57373 0%, #EF5350 100%);
             color: var(--white);
             padding: 0.85rem 0;
             text-align: center;
             font-weight: 500;
-            font-size: 0.95rem;
+            font-size: 1.235rem;
+        }
+
+        @media (max-width: 768px) {
+            .emergency-banner {
+                font-size: 1rem;
+                padding: 0.75rem 1rem;
+            }
         }
 
         .emergency-banner a {
@@ -136,7 +298,7 @@
         .emergency-banner a:hover {
             border-bottom-color: var(--white);
         }
-
+ */
         /* Hero Section */
         .hero-section {
             position: relative;
@@ -196,9 +358,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.95rem;
             color: var(--primary-blue);
             flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            .card-icon-small {
+                width: 48px;
+                height: 48px;
+                font-size: 1.5rem;
+            }
         }
 
         /* Buttons */
@@ -207,8 +377,15 @@
             font-weight: 600;
             padding: 0.65rem 1.5rem;
             transition: all 0.2s ease;
-            font-size: 0.9375rem;
+            font-size: 1.219rem;
             border: none;
+        }
+
+        @media (max-width: 768px) {
+            .btn {
+                font-size: 1.05rem;
+                padding: 0.6rem 1.25rem;
+            }
         }
 
         .btn-primary {
@@ -263,7 +440,7 @@
         }
 
         .section-title {
-            font-size: 2.25rem;
+            font-size: 2.925rem;
             font-weight: 700;
             color: var(--text-dark);
             margin-bottom: 1rem;
@@ -273,7 +450,7 @@
 
         .section-subtitle {
             color: var(--text-muted);
-            font-size: 1.125rem;
+            font-size: 1.463rem;
             margin-bottom: 3rem;
             font-weight: 400;
             line-height: 1.6;
@@ -285,7 +462,7 @@
             }
 
             .section-title {
-                font-size: 2rem;
+                font-size: 2.6rem;
             }
         }
 
@@ -301,7 +478,7 @@
             color: var(--white);
             margin-bottom: 1.25rem;
             font-weight: 700;
-            font-size: 0.9375rem;
+            font-size: 1.219rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
@@ -310,7 +487,7 @@
             color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
             transition: color 0.2s;
-            font-size: 0.9375rem;
+            font-size: 1.219rem;
             display: block;
             margin-bottom: 0.5rem;
         }
@@ -329,7 +506,7 @@
             border-radius: 6px;
             margin: 0 0.25rem;
             transition: all 0.2s;
-            font-size: 1rem;
+            font-size: 1.3rem;
             color: rgba(255, 255, 255, 0.7);
         }
 
@@ -364,12 +541,12 @@
 
         .testimonial-stars {
             color: #FFA726;
-            font-size: 1.1rem;
+            font-size: 1.43rem;
             margin-bottom: 1rem;
         }
 
         .testimonial-content {
-            font-size: 1.05rem;
+            font-size: 1.365rem;
             line-height: 1.7;
             color: var(--text-dark);
             font-style: italic;
@@ -388,7 +565,7 @@
             border: 1px solid var(--border-color);
             border-radius: 6px;
             padding: 0.75rem 1rem;
-            font-size: 0.9375rem;
+            font-size: 1.219rem;
             transition: border-color 0.2s ease;
         }
 
@@ -402,7 +579,7 @@
             font-weight: 500;
             color: var(--text-dark);
             margin-bottom: 0.5rem;
-            font-size: 0.95rem;
+            font-size: 1.235rem;
         }
 
         /* Badge */
@@ -412,7 +589,7 @@
             padding: 0.4rem 0.9rem;
             border-radius: 4px;
             font-weight: 600;
-            font-size: 0.8125rem;
+            font-size: 1.056rem;
             text-transform: uppercase;
             letter-spacing: 0.025em;
         }
@@ -519,26 +696,28 @@
 </head>
 
 <body>
-    <!-- Emergency Banner -->
+    <!-- Emergency Banner 
     <div class="emergency-banner">
         <div class="container">
             <i class="bi bi-exclamation-triangle-fill"></i> Crisis Support Available 24/7
             <a href="tel:988">Call 988</a>
         </div>
     </div>
+    -->
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg sticky-top navbar-light">
         <div class="container">
             <a class="navbar-brand" href="{{ route('home') }}">
-                <img src="{{ asset('images/favicon_io/android-chrome-192x192.png') }}" alt="Global Mental Healthcare Association" style="height: 40px; width: 40px; object-fit: contain; margin-right: 8px;">
-                Global Mental Healthcare Association
+                <img src="{{ asset('images/favicon_io/android-chrome-192x192.png') }}" alt="Global Mental Healthcare Association" style="height: 40px; width: 40px; object-fit: contain;">
+                <span class="brand-full">Global Mental Healthcare Association</span>
+                <span class="brand-short">GMHA</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('home') }}">Home</a>
                     </li>
@@ -578,7 +757,7 @@
                         <img src="{{ asset('images/favicon_io/android-chrome-192x192.png') }}" alt="Global Mental Healthcare Association" style="height: 48px; width: 48px; object-fit: contain; margin-right: 12px;">
                         <h4 class="mb-0 fw-bold text-white">Global Mental Healthcare Association</h4>
                     </div>
-                    <p style="opacity: 0.85; line-height: 1.7; margin-bottom: 1.5rem;">Compassionate mental health care in a safe, welcoming environment. Your journey to wellness starts here.</p>
+                    <p style="color: var(--primary-green); line-height: 1.7; margin-bottom: 1.5rem;">Compassionate mental health care in a safe, welcoming environment. Your journey to wellness starts here.</p>
                     <div class="d-flex gap-2">
                         <a href="#" class="btn btn-sm rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2);" aria-label="Facebook">
                             <i class="bi bi-facebook"></i>
@@ -608,7 +787,7 @@
                     <h6 class="fw-bold mb-3 text-white">Get Help</h6>
                     <ul class="list-unstyled">
                         <li class="mb-2"><a href="{{ route('appointments.create') }}" style="color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.75)'">Book Appointment</a></li>
-                        <li class="mb-2"><a href="tel:988" style="color: var(--primary-green); text-decoration: none; font-weight: 600;">Crisis Hotline: 988</a></li>
+                        <li class="mb-2"><a href="tel:0773251311" style="color: var(--primary-green); text-decoration: none; font-weight: 600;">Crisis Hotline: 0773 251 311</a></li>
                         <li class="mb-2"><a href="#" style="color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.75)'">Insurance Information</a></li>
                         <li class="mb-2"><a href="#" style="color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.75)'">FAQs</a></li>
                     </ul>
@@ -618,13 +797,12 @@
                     <ul class="list-unstyled" style="color: rgba(255,255,255,0.75);">
                         <li class="mb-2 d-flex align-items-start">
                             <i class="bi bi-geo-alt-fill me-2 mt-1" style="color: var(--primary-green);"></i>
-                            <span>123 Wellness Avenue<br>Kampala, Uganda</span>
+                            <span>Wellness Avenue<br>Kampala, Uganda</span>
                         </li>
                         <li class="mb-2 d-flex align-items-center">
                             <i class="bi bi-telephone-fill me-2" style="color: var(--primary-green);"></i>
                             <div style="color: rgba(255,255,255,0.75);">
-                                <a href="tel:0773251311" style="color: inherit; text-decoration: none;">0773 251 311</a> / 
-                                <a href="tel:0740725138" style="color: inherit; text-decoration: none;">0740 725 138</a>
+                                <a href="tel:0773251311" style="color: inherit; text-decoration: none;">0773 251 311</a><a href="tel:0740725138" style="color: inherit; text-decoration: none;">0740 725 138</a>
                             </div>
                         </li>
                         <li class="mb-2 d-flex align-items-center">
@@ -641,12 +819,12 @@
             <hr style="border-color: rgba(255,255,255,0.15); margin: 2.5rem 0 1.5rem;">
             <div class="row align-items-center">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    <p class="mb-0" style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">&copy; {{ date('Y') }} Global Mental Healthcare Association. All rights reserved.</p>
+                    <p class="mb-0" style="color: rgba(255,255,255,0.6); font-size: 1.17rem;">&copy; {{ date('Y') }} Global Mental Healthcare Association. All rights reserved.</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    <a href="#" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem; margin: 0 0.75rem;">Privacy Policy</a>
-                    <a href="#" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem; margin: 0 0.75rem;">Terms of Service</a>
-                    <a href="#" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem; margin: 0 0.75rem;">Accessibility</a>
+                    <a href="#" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 1.17rem; margin: 0 0.75rem;">Privacy Policy</a>
+                    <a href="#" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 1.17rem; margin: 0 0.75rem;">Terms of Service</a>
+                    <a href="#" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 1.17rem; margin: 0 0.75rem;">Accessibility</a>
                 </div>
             </div>
         </div>

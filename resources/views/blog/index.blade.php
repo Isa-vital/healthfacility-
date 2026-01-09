@@ -64,7 +64,7 @@
                 <div class="row g-0">
                     <div class="col-md-6">
                         @if($posts->first()->featured_image)
-                        <img src="{{ asset('storage/' . $posts->first()->featured_image) }}" class="img-cover" style="height: 100%; min-height: 400px;" alt="{{ $posts->first()->title }}">
+                        <img src="{{ str_starts_with($posts->first()->featured_image, 'http') ? $posts->first()->featured_image : asset('storage/' . $posts->first()->featured_image) }}" class="img-cover" style="height: 100%; min-height: 400px;" alt="{{ $posts->first()->title }}">
                         @else
                         <img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800&h=600&fit=crop&q=80" class="img-cover" style="height: 100%; min-height: 400px;" alt="{{ $posts->first()->title }}">
                         @endif
@@ -79,7 +79,7 @@
                             <div class="d-flex align-items-center gap-3 mb-4 text-muted small">
                                 <span><i class="bi bi-calendar3"></i> {{ $posts->first()->published_at->format('M d, Y') }}</span>
                                 <span><i class="bi bi-eye"></i> {{ number_format($posts->first()->views) }} views</span>
-                                <span><i class="bi bi-clock"></i> 5 min read</span>
+                                <span><i class="bi bi-clock"></i> {{ $posts->first()->read_time ?? 5 }} min read</span>
                             </div>
                             <a href="{{ route('blog.show', $posts->first()->slug) }}" class="btn btn-primary btn-lg">
                                 Read Full Article <i class="bi bi-arrow-right ms-2"></i>
@@ -98,7 +98,7 @@
         <div class="col-md-6 col-lg-4">
             <div class="card h-100">
                 @if($post->featured_image)
-                <img src="{{ asset('storage/' . $post->featured_image) }}" class="card-img-top aspect-16-9 img-cover" alt="{{ $post->title }}">
+                <img src="{{ str_starts_with($post->featured_image, 'http') ? $post->featured_image : asset('storage/' . $post->featured_image) }}" class="card-img-top aspect-16-9 img-cover" alt="{{ $post->title }}">
                 @else
                 <img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=600&h=338&fit=crop&q=80" class="card-img-top aspect-16-9 img-cover" alt="{{ $post->title }}">
                 @endif
@@ -106,16 +106,31 @@
                     <div class="d-flex align-items-center justify-content-between mb-3">
                         <span class="badge-custom">{{ ucfirst($post->category) }}</span>
                         <span class="text-muted small">
-                            <i class="bi bi-clock"></i> 5 min
+                            <i class="bi bi-clock"></i> {{ $post->read_time ?? 5 }} min
                         </span>
                     </div>
                     <h5 class="card-title mb-3">{{ $post->title }}</h5>
                     <p class="card-text text-muted mb-3 flex-grow-1" style="font-size: 0.95rem;">{{ Str::limit($post->excerpt, 120) }}</p>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <span class="text-muted small">
-                            <i class="bi bi-calendar3"></i> {{ $post->published_at->format('M d') }}
-                        </span>
-                        <a href="{{ route('blog.show', $post->slug) }}" class="btn btn-primary btn-sm">Read More</a>
+                    <div class="d-flex flex-column gap-2">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <span class="text-muted small">
+                                @if($post->author)
+                                <i class="bi bi-person-fill"></i> {{ $post->author->name }}
+                                @endif
+                            </span>
+                            <span class="text-muted small">
+                                <i class="bi bi-eye"></i> {{ number_format($post->views) }}
+                            </span>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <span class="text-muted small">
+                                <i class="bi bi-calendar3"></i> {{ $post->published_at->format('M d, Y') }}
+                                @if($post->updated_at && $post->updated_at->gt($post->published_at))
+                                <small class="text-muted" style="font-size: 0.85em;">(Updated {{ $post->updated_at->format('M d, Y') }})</small>
+                                @endif
+                            </span>
+                            <a href="{{ route('blog.show', $post->slug) }}" class="btn btn-primary btn-sm">Read More</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -161,9 +176,9 @@
                         <i class="bi bi-telephone-fill"></i>
                     </div>
                     <h5 class="mb-3">Crisis Lifeline</h5>
-                    <p class="display-6 mb-3" style="color: var(--primary-blue); font-weight: 600;">988</p>
+                    <p class="display-6 mb-3" style="color: var(--primary-blue); font-weight: 600;">0773 251 311</p>
                     <p class="text-muted mb-4">Free, confidential support for people in distress. Available 24/7 for crisis intervention and suicide prevention.</p>
-                    <a href="tel:988" class="btn btn-primary w-100">Call Now</a>
+                    <a href="tel:0773251311" class="btn btn-primary w-100">Call Now</a>
                 </div>
             </div>
             <div class="col-md-4">

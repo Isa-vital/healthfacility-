@@ -4,7 +4,7 @@
 
 @section('content')
 <!-- Hero Section -->
-<section class="hero-section" style="background: linear-gradient(rgba(44,95,141,0.85), rgba(63,170,122,0.85)), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1920&q=80') center/cover; min-height: 60vh; display: flex; align-items: center; color: white;">
+<section class="hero-section" style="background: linear-gradient(rgba(44,95,141,0.3), rgba(63,170,122,0.3)), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1920&q=80') center/cover; min-height: 60vh; display: flex; align-items: center; color: white;">
     <div class="container text-center">
         <h1 class="display-3 fw-bold mb-4 text-white">About Global Mental Healthcare Association</h1>
         <p class="lead fs-3 text-white">Where healing begins and hope is restored</p>
@@ -35,7 +35,7 @@
 <div class="spacer-lg"></div>
 
 <!-- Values Section -->
-<section class="section" style="background: linear-gradient(rgba(15, 123, 138, 0.35), rgba(15, 123, 138, 0.35)), url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1920&q=80') center/cover; position: relative;">
+<section class="section" style="background: linear-gradient(rgba(15, 123, 138, 0.15), rgba(15, 123, 138, 0.15)), url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1920&q=80') center/cover; position: relative;">
     <div class="container">
         <div class="row text-center mb-5">
             <div class="col">
@@ -202,7 +202,7 @@
 <div class="spacer-lg"></div>
 
 <!-- CTA Section -->
-<section class="section cta-overlay" style="background: linear-gradient(rgba(44,95,141,0.9), rgba(63,170,122,0.9)), url('https://images.unsplash.com/photo-1512678080530-7760d81faba6?w=1920&q=80') center/cover; color: white;">
+<section class="section cta-overlay" style="background: linear-gradient(rgba(44,95,141,0.6), rgba(63,170,122,0.6)), url('https://images.unsplash.com/photo-1512678080530-7760d81faba6?w=1920&q=80') center/cover; color: white;">
     <div class="container cta-content text-center">
         <h2 class="display-5 fw-bold mb-4 text-white">Ready to Begin Your Journey?</h2>
         <p class="lead mb-4 text-white">Take the first step towards better mental health today.</p>

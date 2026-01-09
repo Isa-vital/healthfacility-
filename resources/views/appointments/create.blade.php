@@ -4,7 +4,7 @@
 
 @section('content')
 <!-- Hero Section -->
-<section class="hero-section" style="background: linear-gradient(rgba(44,95,141,0.85), rgba(63,170,122,0.85)), url('https://images.unsplash.com/photo-1516549655169-df83a0774514?w=1920&q=80') center/cover; min-height: 50vh; display: flex; align-items: center; color: white;">
+<section class="hero-section" style="background: linear-gradient(rgba(44,95,141,0.5), rgba(63,170,122,0.5)), url('https://images.unsplash.com/photo-1516549655169-df83a0774514?w=1920&q=80') center/cover; min-height: 50vh; display: flex; align-items: center; color: white;">
     <div class="container text-center">
         <h1 class="display-3 fw-bold mb-4 text-white">Schedule Your Appointment</h1>
         <p class="lead fs-3 text-white">Take the first step towards better mental health</p>

@@ -28,11 +28,14 @@ class BlogController extends Controller
             'excerpt' => 'required|max:500',
             'featured_image' => 'required|url',
             'category' => 'required|max:100',
-            'author' => 'required|max:255',
         ]);
 
         $validated['slug'] = Str::slug($validated['title']);
         $validated['read_time'] = ceil(str_word_count(strip_tags($validated['content'])) / 200);
+        $validated['author_id'] = auth()->id();
+        $validated['is_published'] = true;
+        $validated['published_at'] = now();
+        $validated['views'] = 0;
 
         BlogPost::create($validated);
 
@@ -52,11 +55,21 @@ class BlogController extends Controller
             'excerpt' => 'required|max:500',
             'featured_image' => 'required|url',
             'category' => 'required|max:100',
-            'author' => 'required|max:255',
         ]);
 
         $validated['slug'] = Str::slug($validated['title']);
         $validated['read_time'] = ceil(str_word_count(strip_tags($validated['content'])) / 200);
+
+        // Set author_id if not already set
+        if (!$blog->author_id) {
+            $validated['author_id'] = auth()->id();
+        }
+
+        // Set as published if not already published
+        if (!$blog->is_published) {
+            $validated['is_published'] = true;
+            $validated['published_at'] = now();
+        }
 
         $blog->update($validated);
 

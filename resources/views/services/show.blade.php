@@ -5,7 +5,7 @@
 
 @section('content')
 <!-- Hero Section -->
-<section class="hero-section" style="background-image: url('{{ $service->image ? asset('storage/' . $service->image) : 'https://images.unsplash.com/photo-1527689368864-3a821dbccc34?w=1920&q=80' }}'); min-height: 60vh;">
+<section class="hero-section" style="background-image: url('{{ $service->image ? (str_starts_with($service->image, 'http') ? $service->image : asset('storage/' . $service->image)) : 'https://images.unsplash.com/photo-1527689368864-3a821dbccc34?w=1920&q=80' }}'); min-height: 60vh;">
     <div class="container hero-content">
         <div class="row">
             <div class="col-lg-8">
@@ -102,7 +102,7 @@
         <div class="col-md-4">
             <div class="card">
                 @if($related->image)
-                <img src="{{ asset('storage/' . $related->image) }}" class="card-img-top aspect-4-3 img-cover" alt="{{ $related->title }}">
+                <img src="{{ str_starts_with($related->image, 'http') ? $related->image : asset('storage/' . $related->image) }}" class="card-img-top aspect-4-3 img-cover" alt="{{ $related->title }}">
                 @else
                 <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&h=450&fit=crop&q=80" class="card-img-top aspect-4-3 img-cover" alt="{{ $related->title }}">
                 @endif

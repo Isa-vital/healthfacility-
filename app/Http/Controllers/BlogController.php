@@ -9,7 +9,8 @@ class BlogController extends Controller
 {
     public function index()
     {
-        $posts = BlogPost::where('is_published', true)
+        $posts = BlogPost::with('author')
+            ->where('is_published', true)
             ->latest('published_at')
             ->paginate(9);
 
@@ -23,7 +24,8 @@ class BlogController extends Controller
 
     public function show($slug)
     {
-        $post = BlogPost::where('slug', $slug)
+        $post = BlogPost::with('author')
+            ->where('slug', $slug)
             ->where('is_published', true)
             ->firstOrFail();
 

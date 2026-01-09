@@ -10,8 +10,14 @@ class AppointmentController extends Controller
 {
     public function index()
     {
-        $appointments = Appointment::with('service')->latest()->paginate(20);
+        $appointments = Appointment::with(['service', 'staff'])->latest()->paginate(20);
         return view('admin.appointments.index', compact('appointments'));
+    }
+
+    public function show(Appointment $appointment)
+    {
+        $appointment->load(['service', 'staff']);
+        return view('admin.appointments.show', compact('appointment'));
     }
 
     public function destroy(Appointment $appointment)

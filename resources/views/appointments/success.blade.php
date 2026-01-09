@@ -4,7 +4,7 @@
 
 @section('content')
 <!-- Hero Section -->
-<section class="hero-section" style="background: linear-gradient(rgba(63,170,122,0.95), rgba(44,95,141,0.95)), url('https://images.unsplash.com/photo-1606506728842-7329e8c0b7d2?w=1920&q=80') center/cover; min-height: 50vh; display: flex; align-items: center; color: white;">
+<section class="hero-section" style="background: linear-gradient(rgba(63,170,122,0.6), rgba(44,95,141,0.6)), url('https://images.unsplash.com/photo-1606506728842-7329e8c0b7d2?w=1920&q=80') center/cover; min-height: 50vh; display: flex; align-items: center; color: white;">
     <div class="container text-center">
         <div class="mb-4">
             <i class="bi bi-check-circle-fill" style="font-size: 6rem; color: white; text-shadow: 0 4px 6px rgba(0,0,0,0.2);"></i>

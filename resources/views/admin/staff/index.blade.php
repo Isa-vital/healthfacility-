@@ -13,46 +13,46 @@
 
 <div class="stat-card">
     @if($staff->count() > 0)
-        <div class="table-responsive">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Title</th>
-                        <th>Specialization</th>
-                        <th>Email</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($staff as $member)
-                    <tr>
-                        <td class="fw-semibold">{{ $member->name }}</td>
-                        <td>{{ $member->title }}</td>
-                        <td>{{ $member->specialization }}</td>
-                        <td>{{ $member->email ?? 'N/A' }}</td>
-                        <td>
-                            <div class="table-actions">
-                                <a href="{{ route('admin.staff.edit', $member) }}" class="btn btn-sm btn-outline-primary">
-                                    <i class="bi bi-pencil"></i> Edit
-                                </a>
-                                <form action="{{ route('admin.staff.destroy', $member) }}" method="POST" 
-                                      onsubmit="return confirm('Are you sure you want to delete this staff member?')">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-sm btn-outline-danger">
-                                        <i class="bi bi-trash"></i> Delete
-                                    </button>
-                                </form>
-                            </div>
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        </div>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Title</th>
+                    <th>Specialization</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($staff as $member)
+                <tr>
+                    <td class="fw-semibold">{{ $member->name }}</td>
+                    <td>{{ $member->title }}</td>
+                    <td>{{ $member->specialization }}</td>
+                    <td>{{ $member->email ?? 'N/A' }}</td>
+                    <td>
+                        <div class="table-actions">
+                            <a href="{{ route('admin.staff.edit', $member) }}" class="btn btn-sm btn-outline-primary">
+                                <i class="bi bi-pencil"></i> Edit
+                            </a>
+                            <form action="{{ route('admin.staff.destroy', $member) }}" method="POST"
+                                onsubmit="return confirm('Are you sure you want to delete this staff member?')">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-sm btn-outline-danger">
+                                    <i class="bi bi-trash"></i> Delete
+                                </button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
     @else
-        <p class="text-muted text-center py-5">No staff members found. <a href="{{ route('admin.staff.create') }}">Add your first staff member</a>.</p>
+    <p class="text-muted text-center py-5">No staff members found. <a href="{{ route('admin.staff.create') }}">Add your first staff member</a>.</p>
     @endif
 </div>
 @endsection

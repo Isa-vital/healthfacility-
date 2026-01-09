@@ -37,7 +37,7 @@
             <div class="col-lg-8">
                 @if($post->featured_image)
                 <div class="position-relative mb-2 rounded-3 overflow-hidden">
-                    <img src="{{ asset('storage/' . $post->featured_image) }}" alt="{{ $post->title }}" class="w-100" style="max-height: 300px; object-fit: cover;">
+                    <img src="{{ str_starts_with($post->featured_image, 'http') ? $post->featured_image : asset('storage/' . $post->featured_image) }}" alt="{{ $post->title }}" class="w-100" style="max-height: 300px; object-fit: cover;">
                 </div>
                 @endif
 
@@ -60,7 +60,7 @@
 
                 <!-- Disclaimer -->
                 <div class="alert border-0 mb-0 p-2" style="background: var(--soft-blue); border-left: 3px solid var(--primary-blue) !important;">
-                    <small style="font-size: 0.78rem;"><i class="bi bi-info-circle-fill me-1"></i><strong>Disclaimer:</strong> This article is for informational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment.</small>
+                    <small style="font-size: 0.78rem;"><i class="bi bi-info-circle-fill me-1"></i><strong></strong> </small>
                 </div>
             </div>
 
@@ -105,8 +105,8 @@
                                 <small class="text-muted">Immediate support available</small>
                             </div>
                         </div>
-                        <a href="tel:988" class="btn w-100" style="background: var(--primary-green); color: white; font-weight: 600;">
-                            Call 988
+                        <a href="tel:0773251311" class="btn w-100" style="background: var(--primary-green); color: white; font-weight: 600;">
+                            Call 0773 251 311
                         </a>
                     </div>
                 </div>

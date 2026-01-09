@@ -38,7 +38,7 @@
         <div class="col-md-6 col-lg-3" data-specialization="{{ $member->specialization }}">
             <div class="card h-100">
                 @if($member->photo)
-                <img src="{{ asset('storage/' . $member->photo) }}" class="aspect-1-1 img-cover" alt="{{ $member->name }}">
+                <img src="{{ str_starts_with($member->photo, 'http') ? $member->photo : asset('storage/' . $member->photo) }}" class="aspect-1-1 img-cover" alt="{{ $member->name }}">
                 @else
                 <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&q=80" class="aspect-1-1 img-cover" alt="{{ $member->name }}">
                 @endif

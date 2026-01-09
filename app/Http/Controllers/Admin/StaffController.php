@@ -27,7 +27,7 @@ class StaffController extends Controller
             'title' => 'required|max:255',
             'specialization' => 'required|max:255',
             'bio' => 'required',
-            'image_url' => 'required|url',
+            'photo' => 'required|url',
             'email' => 'nullable|email',
             'phone' => 'nullable|max:50',
         ]);
@@ -51,7 +51,7 @@ class StaffController extends Controller
             'title' => 'required|max:255',
             'specialization' => 'required|max:255',
             'bio' => 'required',
-            'image_url' => 'required|url',
+            'photo' => 'required|url',
             'email' => 'nullable|email',
             'phone' => 'nullable|max:50',
         ]);
