@@ -30,6 +30,12 @@ Route::get('/appointments/success', [AppointmentController::class, 'success'])->
 Route::get('/resources', [BlogController::class, 'index'])->name('blog.index');
 Route::get('/resources/{slug}', [BlogController::class, 'show'])->name('blog.show');
 
+// Informational pages
+Route::view('/insurance', 'insurance')->name('insurance');
+Route::view('/faqs', 'faqs')->name('faqs');
+Route::view('/privacy', 'privacy')->name('privacy');
+Route::view('/terms', 'terms')->name('terms');
+
 // Admin Routes
 Route::prefix('admin')->name('admin.')->group(function () {
     // Guest routes (login)

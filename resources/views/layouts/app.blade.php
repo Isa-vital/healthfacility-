@@ -788,8 +788,8 @@
                     <ul class="list-unstyled">
                         <li class="mb-2"><a href="{{ route('appointments.create') }}" style="color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.75)'">Book Appointment</a></li>
                         <li class="mb-2"><a href="tel:0773251311" style="color: var(--primary-green); text-decoration: none; font-weight: 600;">Crisis Hotline: 0773 251 311</a></li>
-                        <li class="mb-2"><a href="#" style="color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.75)'">Insurance Information</a></li>
-                        <li class="mb-2"><a href="#" style="color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.75)'">FAQs</a></li>
+                        <li class="mb-2"><a href="{{ route('insurance') }}" style="color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.75)'">Insurance Information</a></li>
+                        <li class="mb-2"><a href="{{ route('faqs') }}" style="color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.75)'">FAQs</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-4 mb-4">
@@ -819,11 +819,11 @@
             <hr style="border-color: rgba(255,255,255,0.15); margin: 2.5rem 0 1.5rem;">
             <div class="row align-items-center">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    <p class="mb-0" style="color: rgba(255,255,255,0.6); font-size: 1.17rem;">&copy; {{ date('Y') }} Global Mental Healthcare Association. All rights reserved. <a style="color: blue; text-decoration: none;" href="www.techmarketug.com"><strong>Tech Market UG</strong></a></p>
+                    <p class="mb-0" style="color: rgba(255,255,255,0.6); font-size: 1.17rem;">&copy; {{ date('Y') }} Global Mental Healthcare Association. All rights reserved. <a style="color: #4FA8B5; text-decoration: none;" href="https://www.techmarketug.com" target="_blank" rel="noopener"><strong>Tech Market UG</strong></a></p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    <a href="#" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 1.17rem; margin: 0 0.75rem;">Privacy Policy</a>
-                    <a href="#" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 1.17rem; margin: 0 0.75rem;">Terms of Service</a>
+                    <a href="{{ route('privacy') }}" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 1.17rem; margin: 0 0.75rem;">Privacy Policy</a>
+                    <a href="{{ route('terms') }}" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 1.17rem; margin: 0 0.75rem;">Terms of Service</a>
                 </div>
             </div>
         </div>

@@ -45,6 +45,31 @@
             left: 0;
             width: 250px;
             padding: 0;
+            z-index: 1045;
+            transition: transform 0.3s ease;
+            overflow-y: auto;
+        }
+
+        .sidebar-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1040;
+            display: none;
+        }
+
+        .sidebar-backdrop.show {
+            display: block;
+        }
+
+        .sidebar-toggle {
+            background: transparent;
+            border: 0;
+            font-size: 1.5rem;
+            color: #1a2332;
+            display: none;
+            padding: 0.25rem 0.5rem;
+            line-height: 1;
         }
 
         .sidebar-brand {
@@ -100,6 +125,48 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 991.98px) {
+            .sidebar {
+                transform: translateX(-100%);
+                box-shadow: 4px 0 16px rgba(0, 0, 0, 0.2);
+            }
+
+            .sidebar.show {
+                transform: translateX(0);
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 1rem;
+            }
+
+            .top-bar {
+                margin: -1rem -1rem 1rem -1rem;
+                padding: 0.75rem 1rem;
+            }
+
+            .sidebar-toggle {
+                display: inline-flex;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .top-bar h4 {
+                font-size: 1.1rem;
+            }
+
+            .stat-card {
+                padding: 1.15rem;
+            }
+
+            .table {
+                font-size: 0.875rem;
+            }
         }
 
         .stat-card {
@@ -141,8 +208,10 @@
 </head>
 
 <body>
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
     <!-- Sidebar -->
-    <div class="sidebar">
+    <div class="sidebar" id="adminSidebar">
         <div class="sidebar-brand">
             <img src="{{ asset('images/favicon_io/android-chrome-192x192.png') }}" alt="Logo">
             <div>
@@ -195,11 +264,14 @@
     <div class="main-content">
         <!-- Top Bar -->
         <div class="top-bar">
-            <div>
+            <div class="d-flex align-items-center gap-2">
+                <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle navigation">
+                    <i class="bi bi-list"></i>
+                </button>
                 <h4 class="mb-0">@yield('page-title', 'Dashboard')</h4>
             </div>
             <div class="d-flex align-items-center gap-3">
-                <span class="text-muted">{{ Auth::user()->name }}</span>
+                <span class="text-muted d-none d-sm-inline">{{ Auth::user()->name }}</span>
             </div>
         </div>
 
@@ -222,6 +294,47 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        (function () {
+            const sidebar = document.getElementById('adminSidebar');
+            const backdrop = document.getElementById('sidebarBackdrop');
+            const toggle = document.getElementById('sidebarToggle');
+
+            function openSidebar() {
+                sidebar.classList.add('show');
+                backdrop.classList.add('show');
+            }
+
+            function closeSidebar() {
+                sidebar.classList.remove('show');
+                backdrop.classList.remove('show');
+            }
+
+            if (toggle) {
+                toggle.addEventListener('click', function () {
+                    if (sidebar.classList.contains('show')) {
+                        closeSidebar();
+                    } else {
+                        openSidebar();
+                    }
+                });
+            }
+
+            if (backdrop) {
+                backdrop.addEventListener('click', closeSidebar);
+            }
+
+            sidebar.querySelectorAll('a.nav-link').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    if (window.innerWidth < 992) closeSidebar();
+                });
+            });
+
+            window.addEventListener('resize', function () {
+                if (window.innerWidth >= 992) closeSidebar();
+            });
+        })();
+    </script>
     @stack('scripts')
 </body>
 
