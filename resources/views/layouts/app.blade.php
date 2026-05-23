@@ -195,11 +195,21 @@
         .nav-link {
             color: var(--text-dark) !important;
             font-weight: 500;
-            margin: 0 0.5rem;
+            margin: 0 0.25rem;
             transition: color 0.2s ease;
             position: relative;
-            font-size: 1.219rem;
-            padding: 0.5rem 0.75rem !important;
+            font-size: 1.02rem;
+            padding: 0.5rem 0.65rem !important;
+            white-space: nowrap;
+            letter-spacing: -0.005em;
+        }
+
+        @media (min-width: 1400px) {
+            .nav-link {
+                font-size: 1.08rem;
+                padding: 0.5rem 0.85rem !important;
+                margin: 0 0.35rem;
+            }
         }
 
         @media (max-width: 991px) {
@@ -207,6 +217,7 @@
                 font-size: 1.1rem;
                 padding: 0.5rem 0 !important;
                 margin: 0;
+                white-space: normal;
             }
         }
 
@@ -243,6 +254,9 @@
             .btn-appointment {
                 width: 100%;
                 margin-top: 0.5rem;
+                justify-content: center;
+                font-size: 1.05rem;
+                padding: 0.65rem 1.25rem;
             }
         }
 
@@ -250,23 +264,31 @@
             background: var(--primary-blue);
             color: var(--white);
             border: none;
-            padding: 0.6rem 1.5rem;
-            border-radius: 6px;
+            padding: 0.55rem 1.25rem;
+            border-radius: 8px;
             font-weight: 600;
             transition: all 0.2s ease;
-            font-size: 1.219rem;
+            font-size: 1rem;
+            white-space: nowrap;
+            line-height: 1.2;
+            box-shadow: 0 2px 6px rgba(15, 123, 138, 0.18);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
         }
 
-        @media (max-width: 991px) {
-            .btn-appointment {
-                font-size: 1.05rem;
-                padding: 0.5rem 1.25rem;
-            }
+        .btn-appointment::before {
+            content: '\F4CB';
+            font-family: 'bootstrap-icons';
+            font-size: 1.05rem;
+            line-height: 1;
         }
 
         .btn-appointment:hover {
             background: #0d6876;
             color: var(--white);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(15, 123, 138, 0.28);
         }
 
         /* Emergency Banner

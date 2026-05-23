@@ -11,6 +11,12 @@ class AuthController extends Controller
 {
     public function showLoginForm()
     {
+        // If an admin is already logged in (e.g. reopened a tab), send them
+        // straight to the dashboard instead of showing the login form.
+        if (Auth::check() && Auth::user()->is_admin) {
+            return redirect()->route('admin.dashboard');
+        }
+
         return view('admin.login');
     }
 

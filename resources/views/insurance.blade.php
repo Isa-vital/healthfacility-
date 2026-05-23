@@ -40,16 +40,16 @@
         </div>
         <div class="row g-4">
             @php
-                $plans = [
-                    ['name' => 'UAP Old Mutual', 'icon' => 'shield-check'],
-                    ['name' => 'Jubilee Health Insurance', 'icon' => 'shield-check'],
-                    ['name' => 'AAR Insurance', 'icon' => 'shield-check'],
-                    ['name' => 'ICEA LION Health', 'icon' => 'shield-check'],
-                    ['name' => 'Prudential Health', 'icon' => 'shield-check'],
-                    ['name' => 'Liberty Health', 'icon' => 'shield-check'],
-                    ['name' => 'CIC Insurance Group', 'icon' => 'shield-check'],
-                    ['name' => 'Britam Health', 'icon' => 'shield-check'],
-                ];
+            $plans = [
+            ['name' => 'UAP Old Mutual', 'icon' => 'shield-check'],
+            ['name' => 'Jubilee Health Insurance', 'icon' => 'shield-check'],
+            ['name' => 'AAR Insurance', 'icon' => 'shield-check'],
+            ['name' => 'ICEA LION Health', 'icon' => 'shield-check'],
+            ['name' => 'Prudential Health', 'icon' => 'shield-check'],
+            ['name' => 'Liberty Health', 'icon' => 'shield-check'],
+            ['name' => 'CIC Insurance Group', 'icon' => 'shield-check'],
+            ['name' => 'Britam Health', 'icon' => 'shield-check'],
+            ];
             @endphp
             @foreach($plans as $plan)
             <div class="col-6 col-md-4 col-lg-3">

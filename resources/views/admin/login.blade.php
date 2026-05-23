@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Admin Login - Global Mental Healthcare Association</title>
 
     <!-- Favicon -->
@@ -102,6 +103,42 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Keep the CSRF token fresh while the login page is open so that a
+        // user who leaves the tab idle for a long time doesn't get a 419.
+        (function() {
+            const tokenInput = document.querySelector('input[name="_token"]');
+            if (!tokenInput) return;
+
+            async function refreshToken() {
+                try {
+                    const res = await fetch(window.location.href, {
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest'
+                        },
+                        credentials: 'same-origin',
+                        cache: 'no-store',
+                    });
+                    if (!res.ok) return;
+                    const html = await res.text();
+                    const match = html.match(/name="csrf-token"\s+content="([^"]+)"/);
+                    if (match && match[1]) {
+                        tokenInput.value = match[1];
+                        const meta = document.querySelector('meta[name="csrf-token"]');
+                        if (meta) meta.setAttribute('content', match[1]);
+                    }
+                } catch (e) {
+                    /* network issue: ignore */ }
+            }
+
+            // Refresh every 15 minutes and right before the user submits.
+            setInterval(refreshToken, 15 * 60 * 1000);
+            document.querySelector('form')?.addEventListener('submit', () => {}, {
+                once: true
+            });
+            window.addEventListener('focus', refreshToken);
+        })();
+    </script>
 </body>
 
 </html>

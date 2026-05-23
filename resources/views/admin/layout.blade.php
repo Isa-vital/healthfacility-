@@ -295,7 +295,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        (function () {
+        (function() {
             const sidebar = document.getElementById('adminSidebar');
             const backdrop = document.getElementById('sidebarBackdrop');
             const toggle = document.getElementById('sidebarToggle');
@@ -311,7 +311,7 @@
             }
 
             if (toggle) {
-                toggle.addEventListener('click', function () {
+                toggle.addEventListener('click', function() {
                     if (sidebar.classList.contains('show')) {
                         closeSidebar();
                     } else {
@@ -324,13 +324,13 @@
                 backdrop.addEventListener('click', closeSidebar);
             }
 
-            sidebar.querySelectorAll('a.nav-link').forEach(function (link) {
-                link.addEventListener('click', function () {
+            sidebar.querySelectorAll('a.nav-link').forEach(function(link) {
+                link.addEventListener('click', function() {
                     if (window.innerWidth < 992) closeSidebar();
                 });
             });
 
-            window.addEventListener('resize', function () {
+            window.addEventListener('resize', function() {
                 if (window.innerWidth >= 992) closeSidebar();
             });
         })();
