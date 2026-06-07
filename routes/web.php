@@ -65,5 +65,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
         // Testimonials Management
         Route::resource('testimonials', App\Http\Controllers\Admin\TestimonialController::class)->except(['show']);
+
+        // Site Settings
+        Route::prefix('settings')->name('settings.')->group(function () {
+            Route::get('social', [App\Http\Controllers\Admin\SettingsController::class, 'social'])->name('social');
+            Route::put('social', [App\Http\Controllers\Admin\SettingsController::class, 'updateSocial'])->name('social.update');
+        });
     });
 });

@@ -245,6 +245,10 @@
                 <i class="bi bi-star"></i>
                 Testimonials
             </a>
+            <a href="{{ route('admin.settings.social') }}" class="nav-link {{ request()->routeIs('admin.settings.*') ? 'active' : '' }}">
+                <i class="bi bi-share"></i>
+                Social Links
+            </a>
             <hr style="border-color: rgba(255,255,255,0.1); margin: 1rem 1.5rem;">
             <a href="{{ route('home') }}" class="nav-link" target="_blank">
                 <i class="bi bi-box-arrow-up-right"></i>

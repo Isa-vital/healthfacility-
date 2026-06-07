@@ -780,19 +780,13 @@
                         <h4 class="mb-0 fw-bold text-white">Global Mental Healthcare Association</h4>
                     </div>
                     <p style="color: var(--primary-green); line-height: 1.7; margin-bottom: 1.5rem;">Compassionate mental health care in a safe, welcoming environment. Your journey to wellness starts here.</p>
-                    <div class="d-flex gap-2">
-                        <a href="#" class="btn btn-sm rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2);" aria-label="Facebook">
-                            <i class="bi bi-facebook"></i>
-                        </a>
-                        <a href="#" class="btn btn-sm rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2);" aria-label="Twitter">
-                            <i class="bi bi-twitter"></i>
-                        </a>
-                        <a href="#" class="btn btn-sm rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2);" aria-label="Instagram">
-                            <i class="bi bi-instagram"></i>
-                        </a>
-                        <a href="#" class="btn btn-sm rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2);" aria-label="LinkedIn">
-                            <i class="bi bi-linkedin"></i>
-                        </a>
+                    <div class="d-flex gap-2 flex-wrap">
+                        @forelse($socialLinks ?? [] as $social)
+                            <a href="{{ $social->value }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2);" aria-label="{{ $social->label }}">
+                                <i class="bi {{ $social->icon }}"></i>
+                            </a>
+                        @empty
+                        @endforelse
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-4 mb-4">
